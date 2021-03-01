@@ -31,7 +31,7 @@
 }
 
 .crypto-wrapper:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
   .crypto-wrapper > h1 {

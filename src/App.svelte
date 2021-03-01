@@ -2,6 +2,7 @@
 <script>
   import {onMount, tick} from "svelte"
   import Crypto from "./Crypto.svelte"
+  import Footer from "./Footer.svelte"
   import axios from "axios"
 
   $: data = ""
@@ -19,21 +20,20 @@
 </script>
 <div class="content">
   <div class="head_container">
-  <h1>Cryptocurrency</h1>
-  <select on:blur={getData} class="currency_type" bind:value="{currency}">
-    <optgroup>
-      <option value="usd">USD</option>
-      <option value="cad">CAD</option>
-    </optgroup>
-  </select>
-</div>
-  
-  <div class="cryptos">
-      {#each data as crypto} 
-        <Crypto {currency_symbol} {crypto} />
-      {/each}
+    <h1>Cryptocurrency</h1>
+    <select on:blur={getData} class="currency_type" bind:value="{currency}">
+      <optgroup>
+        <option value="usd">USD</option>
+        <option value="cad">CAD</option>
+      </optgroup>
+    </select>
   </div>
-  
+  <div class="cryptos">
+    {#each data as crypto} 
+      <Crypto {currency_symbol} {crypto} />
+    {/each}
+  </div>
+  <Footer />
 </div>
 
 <style>
@@ -41,8 +41,8 @@
    position: relative;
    display: grid;
    grid-template-columns: 0.5fr 1fr 0.5fr;
-   grid-template-rows: 70px 1fr;
-   grid-gap: 50px;
+   grid-template-rows: 90px 1fr 140px;
+   grid-gap: 30px;
    width: 100%;
  }
  
@@ -91,5 +91,5 @@
     outline: none;
     border-radius: 8px;
   }
-  
+
 </style>
