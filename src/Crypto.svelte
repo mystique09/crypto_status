@@ -84,4 +84,15 @@
     color: rgb(166 182 183);
   }
 
+  @media only screen and (max-width: 700px) {
+    .crypto-prices .crypto-prices-content span {
+      font-size: 0.45rem;
+    }
+
+    .crypto-prices .crypto-prices-content p {
+      font-size: 0.35rem;
+      color: rgb(166 182 183);
+    }
+  }
+
 </style>
