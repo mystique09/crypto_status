@@ -1,3 +1,3 @@
 # CRYPTOCURRENCY WEBSITE
 
-![sample_image](https://user-images.githubusercontent.com/50514928/109414267-03a09e00-79ed-11eb-95f5-ad1d86452c39.png)
+![cryptocurrency](https://user-images.githubusercontent.com/50514928/109477591-29907600-7ab3-11eb-9f28-cb33d3171c3a.png)
