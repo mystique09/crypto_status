@@ -1,30 +1,33 @@
 
 <script>
-  import {onMount, tick} from "svelte"
-  import Crypto from "./Crypto.svelte"
-  import Footer from "./Footer.svelte"
-  import axios from "axios"
+  import {onMount, tick} from "svelte";
+  import Crypto from "./Crypto.svelte";
+  import Footer from "./Footer.svelte";
+  import axios from "axios";
 
-  $: data = ""
-  $: currency = "usd"
-  $: currency_symbol = currency === "usd" ? "$" : "C$"
+  let currencies = [["usd", "$"], ["cad", "C$"], ["eur", "€"], ["php", "₱"]];
+  $:  data = "";
+  $: currency = "usd";
+  $: currency_symbol = currencies.filter((currency_name, index) => currency_name[0] === currency).join(",").split(",")[1];
 
   async function getData(){
-    await tick()
-    const res = await axios(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}`)
-    data = await res.data
+    await tick();
+    const res = await axios(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}`);
+    data = await res.data;
   }
  
-  onMount(getData)
+  onMount(getData);
 
 </script>
 <div class="content">
   <div class="head_container">
     <h1>Cryptocurrency</h1>
-    <select on:blur={getData} class="currency_type" bind:value="{currency}">
+    <select on:change={getData} class="currency_type" bind:value="{currency}">
       <optgroup>
         <option value="usd">USD</option>
         <option value="cad">CAD</option>
+        <option value="eur">EUR</option>
+        <option value="php">PHP</option>
       </optgroup>
     </select>
   </div>
@@ -40,7 +43,7 @@
  .content {
    position: relative;
    display: grid;
-   grid-template-columns: 0.5fr 1fr 0.5fr;
+   grid-template-columns: 0.2fr 1fr 0.2fr;
    grid-template-rows: 90px 1fr 140px;
    grid-gap: 30px;
    width: 100%;

@@ -46,7 +46,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        transition: transform 0.5s ease-in;
+        transition: transform 0.3s ease-in;
         margin: 5px;
     }
 
@@ -56,7 +56,7 @@
     }
 
     .footer-content li:hover {
-        transform: translateY(10px);
+        transform: scale(1.05);
     }
 
     .footer-content li i {

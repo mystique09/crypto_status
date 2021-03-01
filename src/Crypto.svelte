@@ -1,6 +1,6 @@
 <script>
-   export let crypto
-   export let currency_symbol
+   export let crypto;
+   export let currency_symbol;
 </script>
 
 <div class="crypto-wrapper">
