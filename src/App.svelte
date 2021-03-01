@@ -6,7 +6,7 @@
 
   $: data = ""
   $: currency = "usd"
-  $: currency_symbol = currency === "usd" ? "$" : "cad" ? "C$" : "^";
+  $: currency_symbol = currency === "usd" ? "$" : "C$"
 
   async function getData(){
     await tick()
@@ -20,9 +20,11 @@
 <div class="content">
   <div class="head_container">
   <h1>Cryptocurrency</h1>
-  <select on:change={getData} class="currency_type" bind:value="{currency}">
-    <option value="usd">USD</option>
-    <option value="cad">CAD</option>
+  <select on:blur={getData} class="currency_type" bind:value="{currency}">
+    <optgroup>
+      <option value="usd">USD</option>
+      <option value="cad">CAD</option>
+    </optgroup>
   </select>
 </div>
   
@@ -35,22 +37,12 @@
 </div>
 
 <style>
-  :root {
-    font-size: 32px;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
  .content {
-   position: absolute;
+   position: relative;
    display: grid;
    grid-template-columns: 0.5fr 1fr 0.5fr;
    grid-template-rows: 70px 1fr;
-   grid-gap: 20px;
+   grid-gap: 50px;
    width: 100%;
  }
  
@@ -71,7 +63,7 @@
    flex-direction: row;
    justify-content: space-evenly;
    align-items: center;
-   background: #2b3389;
+   background: var(--secondary);
    width: 100%;
  }
  
@@ -85,15 +77,19 @@
   }
 
   .content > .head_container .currency_type {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     border: none;
     outline: none;
     color: #ffffff;
     background: none;
   }
 
-  .content > .head_container .currency_type option {
-    color: #000000;
+  .content > .head_container .currency_type > optgroup {
+    font-size: 0.3rem;
+    background: var(--secondary);
+    border: none;
+    outline: none;
+    border-radius: 8px;
   }
   
 </style>

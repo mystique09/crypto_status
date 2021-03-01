@@ -23,7 +23,7 @@
     margin: 5px;
     width: 100%;
     height: 190px;
-    background: #2b3389;
+    background: /*#2b3389*/var(--secondary);
     color: white;
     padding: 20px 20px;
     border-radius: 9px;
