@@ -2,7 +2,7 @@
 
 </script>
 
-<div class="footer-container">
+<div class="footer">
     <h2 class="footer-logo">Cryptocurrency</h2>
     <ul class="footer-content">
         <li><i class="fab fa-github"></i><a href="https://github.com/sythe08/sythe08">Github</a></li>
@@ -12,54 +12,42 @@
 </div>
 
 <style scoped>
-    .footer-container {
-        position: relative;
-        grid-column: 2/3;
-        display: grid;
-        grid-gap: 20%;
-        grid-template-columns: repeat(2, 1fr);
-        position: relative;
-        width: 100%;
-        background: var(--secondary);
-    }
+  .footer {
+    height: 200px;
+    color: var(--ternary);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    .footer-logo {
-        justify-self: center;
-        align-self: center;
-        font-size: 0.5rem;
-        font-weight: 600;
-        color: white;
-    }
+  .footer h2 {
+      color: var(--highlight);
+  }
 
-    .footer-content {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        list-style: none;
-        padding: 10px 10px;
-        flex-wrap: wrap;
-    }
+  .footer ul {
+      padding: 20px;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+  }
 
-    .footer-content li {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        transition: transform 0.3s ease-in;
-        margin: 5px;
-    }
+  .footer ul li {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+  }
 
-    .footer-content li a {
-        font-size: 0.4rem;
-        color: var(--primary);
-    }
+  .footer ul li a {
+    color: var(--ternary);
+  }
 
-    .footer-content li:hover {
-        transform: scale(1.05);
-    }
+  .footer ul li i {
+      color: var(--secondary);
+      font-size: 2rem;
+      margin-bottom: 5px;
+  }
 
-    .footer-content li i {
-        color: var(--primary);
-    }
 </style>
