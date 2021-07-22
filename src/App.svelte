@@ -30,11 +30,21 @@
   </select>
 </div>
 <div class="main">
-  <div class="cryptocurreny-list">
-    <!--{#each data as crypto (crypto)} 
+  <table class="cryptocurreny-list">
+    <thead class="headings">
+      <tr>Coin</tr>
+      <tr class="price">Price</tr>
+      <tr>High 24h</tr>
+      <tr>Low 24h</tr>
+      <tr>Total Supply</tr>
+      <tr>Total Volume</tr>
+    </thead>
+    <tbody>
+      {#each data as crypto (crypto)} 
       <Crypto {currency_symbol} {crypto} />
-    {/each} -->
-  </div>
+    {/each}
+    </tbody>
+  </table>
 </div>
 <Footer />
 
@@ -66,6 +76,30 @@
   }
 
   .main {
-    height: 100vh;
+    height: auto;
+  }
+  
+  .main .cryptocurreny-list {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main .cryptocurreny-list .headings {
+    color: var(--ternary);
+    background: var(--secondary);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+    padding: 1rem 2rem;
+  }
+
+  .main .cryptocurreny-list .headings tr {
+    margin: 4px;
   }
 </style>

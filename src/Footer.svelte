@@ -15,6 +15,7 @@
   .footer {
     height: 200px;
     color: var(--ternary);
+    margin-top: 40px;
     
     display: flex;
     flex-direction: column;
@@ -27,7 +28,7 @@
   }
 
   .footer ul {
-      padding: 20px;
+      padding: 10px;
       font-size: 1.5rem;
       display: flex;
       align-items: center;
@@ -42,6 +43,7 @@
 
   .footer ul li a {
     color: var(--ternary);
+    font-size: 1rem;
   }
 
   .footer ul li i {

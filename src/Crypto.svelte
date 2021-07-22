@@ -3,19 +3,28 @@
    export let currency_symbol;
 </script>
 
-<div class="crypto">
-    <h1>{crypto.name} <img src={crypto.image} alt={crypto.name} /></h1>
-    <div class="crypto-prices">
-      <div class="crypto-prices-content buy"><span>Current price</span> <p>{currency_symbol}{crypto.current_price}</p></div>
-      <div class="crypto-prices-content low24"><span>Low 24 hours</span> <p>{currency_symbol}{crypto.low_24h}</p></div>
-      <div class="crypto-prices-content high24"><span>High 24 hours</span> <p>{currency_symbol}{crypto.high_24h}</p></div>
-      <div class="crypto-prices-content total_supply"><span>Total supply</span> <p>{crypto.total_supply || "Not available"}</p></div>
-    </div>
-</div>
+<tr class="crypto">
+  <td><img src={crypto.image} alt="icon" /> {crypto.name}</td>
+  <td>{currency_symbol} {crypto.current_price}</td>
+  <td>{crypto.high_24h}</td>
+  <td>{crypto.low_24h}</td>
+  <td>{crypto.total_supply || 'Not Available'}</td>
+  <td>{crypto.total_volume}</td>
+</tr>
 
 <style scoped>
   .crypto {
     width: 100%;
-    height: 250px;
+    color: var(--ternary);
+    background: var(--bg);
+  }
+
+  .crypto img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .crypto td {
+    padding: 1rem;
   }
 </style>
