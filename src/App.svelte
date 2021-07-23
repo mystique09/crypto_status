@@ -32,12 +32,14 @@
 <div class="main">
   <table class="cryptocurreny-list">
     <thead class="headings">
-      <tr>Coin</tr>
-      <tr class="price">Price</tr>
-      <tr>High 24h</tr>
-      <tr>Low 24h</tr>
-      <tr>Total Supply</tr>
-      <tr>Total Volume</tr>
+      <tr>
+        <td>Coin</td>
+        <td class="price">Price</td>
+        <td>High 24h</td>
+        <td>Low 24h</td>
+        <td>Total Supply</td>
+        <td>Total Volume</td>
+      </tr>
     </thead>
     <tbody>
       {#each data as crypto (crypto)} 
@@ -50,13 +52,14 @@
 
 <style>
   .navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     height: 70px;
     background: var(--primary);
     color: var(--ternary);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .navbar h1 {
@@ -77,29 +80,44 @@
 
   .main {
     height: auto;
+    width: 100%;
   }
   
   .main .cryptocurreny-list {
+    position: relative;
     width: 100%;
     margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    border-collapse: collapse;
+    border-spacing: none;
+    text-align: center;
   }
 
   .main .cryptocurreny-list .headings {
-    color: var(--ternary);
-    background: var(--secondary);
-    font-size: 1rem;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 6rem;
-    padding: 1rem 2rem;
+    color: #c4c4d8;
+    background: #1f1f2b;
+    font-size: 1.3rem;
+    padding: 1.4rem;
+    font-weight: 700;
   }
 
-  .main .cryptocurreny-list .headings tr {
-    margin: 4px;
+  .main .cryptocurreny-list .headings tr td {
+    text-align: left;
+    padding: 0.4rem;
+  }
+
+  @media only screen and (max-width: 845px) {
+    .main {
+      width: 100%;
+    }
+    .main .cryptocurreny-list .headings {
+      font-size: 0.9rem;
+    }
+
+    .main .cryptocurreny-list {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 </style>

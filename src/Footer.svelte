@@ -5,9 +5,9 @@
 <div class="footer">
     <h2 class="footer-logo">Cryptocurrency</h2>
     <ul class="footer-content">
-        <li><i class="fab fa-github"></i><a href="https://github.com/sythe08/sythe08">Github</a></li>
-        <li><i class="fab fa-facebook"></i><a href="https://facebook.com/benjiebengarcia">Facebook</a></li>
-        <li><i class="fas fa-user-circle"></i><a href="/">Portfolio</a></li>
+        <li><i class="fab fa-github"></i><a href="https://github.com/sythe08/sythe08" target="_blank">Github</a></li>
+        <li><i class="fab fa-facebook"></i><a href="https://facebook.com/benjiebengarcia" target="_blank">Facebook</a></li>
+        <li><i class="fas fa-user-circle"></i><a href="https://benjieben.tk" target="_blank">Portfolio</a></li>
     </ul>
 </div>
 
