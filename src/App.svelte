@@ -3,7 +3,6 @@
   import {onMount, tick} from "svelte";
   import Crypto from "./Crypto.svelte";
   import Footer from "./Footer.svelte";
-  import axios from "axios";
 
   let currencies = [["usd", "$"], ["cad", "C$"], ["eur", "€"], ["php", "₱"]];
   $:  data = "";
@@ -12,8 +11,8 @@
 
   async function getData(){
     await tick();
-    const res = await axios(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}`);
-    data = await res.data;
+    const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}`);
+    data = await res.json();
   }
  
   onMount(getData);
